@@ -4,7 +4,7 @@ I spotted a new phishing campaign targeting our publicly available email boxes w
 
 ## Phishing email
 
-![Alt text](data/email.png?raw=true "Email sample")
+![Alt text](Data/email.png?raw=true "Email sample")
 
 It all started classically with an email. Phishing attempt claiming that you received the document via MS OneDrive and to view the documents, you have to follow the link. So far, it is quite normal. I would give the visual of the email 6/10 (above average phishing email).
 
@@ -37,7 +37,7 @@ That is interesting. `translate.goog` is owned by Google and is used for full-pa
 
 First, we need to understand how the Google Translate URL works. When you want to translate the whole page with Google Translate, the service creates a subdomain from the TLD and SLD of the page you want to translate and the `.` is changed to the `-`. The rest of the URL (subdirectory, path, parameters) is also added to the `translate.goog` request with some additional parameters for the translating service.
 
-![Alt text](data/google_translate.png?raw=true "Email sample")
+![Alt text](Data/google_translate.png?raw=true "Email sample")
 
 Getting the target URL with this knowledge is easy and if you receive any such link with Google Translate, you should check directly it. Also if you are lazy, just open the URL in a safe environment, open the web page source code and the target URL is at the 4th line ;)
 
@@ -53,7 +53,7 @@ The trick here is that the TLD and SLD belong to Google and practically no one w
 
 Another interesting fact was that the attackers managed to hide the Google Translate menu, which added also a bit more credibility. Normally you need to click on the minimise button in the top right corner, but in this case, it was hidden since the first visit.
 
-![Alt text](data/phishing_page.png?raw=true "Email sample")
+![Alt text](Data/phishing_page.png?raw=true "Email sample")
 
 ### Phishing webpage served via IPFS
 
@@ -69,7 +69,7 @@ The file address is based on the hash of the file. If the file is changed, a new
 
 Circling back to the malicious URL we have seen used during the campaign, we can see what is going on. The file is saved on the IPFS network. Normally you would need to go via their protocol, but they also offer the ability to use an IPFS Gateway and simply go via `https://ipfs.io/ipfs/[hash_of_the_file]`.
 
-![Alt text](data/IPFS.png?raw=true "Email sample")
+![Alt text](Data/IPFS.png?raw=true "Email sample")
 
 One of the main reasons why IPFS has become a new tool for fraudsters is that many web hosting or cloud services are now offering IPFS services. This brings more flexibility with new types of phishing URLs, that do not have a bad reputation yet. Also, the providers of the IPFS gateways are legitimate companies like Cloudflare and the links are not also being blocked by URL reputation scanners. And lastly taking down content from the distributed system is considerably harder in comparison to the HTTP world.
 
