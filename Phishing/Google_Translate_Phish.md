@@ -20,9 +20,8 @@ It pointed to Send Grid, which is a legitimate mailing service used by big compa
 
 In the same email, you could also find links to Unsubscribe and to Manage, which just supports the theory that the campaign were using legitimate services to give their campaign more credibility. On the other hand, I have to give Send Grid a small praise, that they took down the links within a few days since reporting. It is not so common with other providers.
 
-```
-A little side note: I do not understand those companies for email services, which hide the destination URL. I would recommend all users to just ignore such emails rather than blindly click. With some such companies, you can decode the destination URL from the link, but for Send Grid, I couldn't find any easy way. Does anyone have some tips?
-```
+
+**A little side note:** I do not understand those companies for email services, which hide the destination URL. I would recommend all users to just ignore such emails rather than blindly click. With some such companies, you can decode the destination URL from the link, but for Send Grid, I couldn't find any easy way. Does anyone have some tips?
 
 ## Following the link into the translated world
 
