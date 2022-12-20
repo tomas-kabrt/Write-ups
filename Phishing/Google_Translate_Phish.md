@@ -1,8 +1,8 @@
-# Phishing Campaign Google Translate Trick and IPFS hosting
+# Google Translate Trick Phishing Campaign and IPFS hosting
 
 I spotted a new phishing campaign targeting our publicly available email boxes with some techniques I've never seen before. Let's check what the bad guys prepared for us this time :)
 
-## Phishing email
+## Phishing Email
 
 ![Alt text](Data/email.png?raw=true "Email sample")
 
@@ -22,7 +22,7 @@ In the same email, there were also links to Unsubscribe and Manage. That support
 
 **Small side note:** I don't understand email service companies that hide the destination URL. I would encourage all users to ignore such emails rather than blindly clicking on any link. Links from some companies can be decoded using publicly available tools (often directly from the vendor), but I haven't found any easy way for Send Grid. Does anyone have any tips?
 
-## Following the link into the translated world
+## Following the Link into the Translated World
 
 As I mentioned, I was unable to extract the link from the Send Grid URL, so I took the easy route and just followed the link in an isolated VM and the redirect took me here:
 
@@ -32,7 +32,7 @@ https://ipfs-io.translate.goog/ipfs/QmWt2RQvZNRkfiHLuqRMmiEWhUE69jkVnvfZh5C9EGc8
 
 That is interesting. `translate.goog` is owned by Google and is used for full-page translation by the Google Translate service. It took me a bit to understand what the attackers were trying to achieve. Then it hit me, that it might be a cheap and easy method to overcome web/gateway filtering. How does Google Translate help you do that?
 
-### Google Translate URL link
+### Google Translate URL Link
 
 Google Translate allows you to translate the entire web page simply by passing it a link that redirects you to a new URL where the original domain is hyphenated and inserted as a subdomain of `translate.goog`. The rest of the original URL request (subdirectory, path, parameters) is also added to the `translate.goog` request with additional parameters for the translation service.
 
@@ -58,7 +58,7 @@ Another interesting thing was that the attackers managed to hide the Google Tran
 
 ![Alt text](Data/phishing_page.png?raw=true "Email sample")
 
-### Phishing webpage served via IPFS
+### Phishing Webpage Served via IPFS
 
 We are slowly getting to the end, but it is still not all. The goal of the phishing website is to obtain your login credentials and use them later in a follow-up attack. The website has a similar quality to a phishing email, but there are a few interesting features.
 
@@ -89,3 +89,7 @@ The use of distributed file systems (e.g. IPFS) has certainly not had the last w
 - Monitor or block access to the IPFS network
 
 ## Reading and References
+
+- https://support.google.com/translate/answer/2534559?hl=en&co=GENIE.Platform%3DDesktop
+- https://docs.ipfs.tech/concepts/what-is-ipfs/#decentralizationAs
+- https://docs.sendgrid.com/
