@@ -8,13 +8,13 @@ Link: [BTLO](https://blueteamlabs.online/home/challenge/reverse-engineering-a-cl
 
 ## Questions
 
-###What is the name of the compiler used to generate the EXE? (1 points)
+### What is the name of the compiler used to generate the EXE? (1 points)
 
 Open the file in CFF Explorer. Interesting fact is that DIE doesn't return the same result.
 
 `Microsoft Visual C++ 8`
 
-###This malware, when executed, sleeps for some time. What is the sleep time in minutes? (1 points)
+### This malware, when executed, sleeps for some time. What is the sleep time in minutes? (1 points)
 
 Let's open it in the Ida and follow the entry point.
 
